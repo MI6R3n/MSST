@@ -11,7 +11,6 @@ print """\n
 		And tick the "Web & App Activity" option """
 
 ti = input("\nEnter Time For Sleeping Script (Secound) >> ")
-print ("\n\tWait until the mail arrives")
 
 
 sender = raw_input("\nEnter Sender Gmail >> ")  
@@ -25,6 +24,8 @@ message = raw_input("""\nEnter Your Message >>
 username = raw_input("\nEnter Your Username(Gmail) >> ")
 
 password = getpass.getpass("\nEnter Your Password >> ") 
+
+print ("\n\tWait until the mail arrives")
             
 time.sleep(ti)
 

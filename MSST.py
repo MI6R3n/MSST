@@ -35,4 +35,4 @@ server.login( username , password )
 server.sendmail(sender, toaddrs, message) 
 server.quit() 
 
-print "The operation was carried out"
+print "\n\nThe operation was carried out\n\n"

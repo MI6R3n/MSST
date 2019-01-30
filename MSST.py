@@ -5,34 +5,44 @@ import getpass
 import os
 
 os.system("clear")
-print """\n
-    To use this feature, you must activate the Google Account Limit to this section
-		https://myaccount.google.com/data-and-personalization
-		And tick the "Web & App Activity" option """
 
-ti = input("\nEnter Time For Sleeping Script (Secound) >> ")
+try :
+	print """\n
+		To use this feature, you must activate the Google Account Limit to this section
+			https://myaccount.google.com/data-and-personalization
+			And tick the "Web & App Activity" option """
+
+	ti = input("\n[*] Enter Time For Sleeping Script (Secound) >> ")
 
 
-sender = raw_input("\nEnter Sender Gmail >> ")  
+	sender = raw_input("\n[*] Enter Sender Gmail >> ")  
 
-toaddrs = raw_input("\nEnter Target MAil >> ")
+	toaddrs = raw_input("\n[*] Enter Target MAil >> ")
 
-message = raw_input("""\nEnter Your Message >>  
- 
- """)  
+	message = raw_input("""\n[*] Enter Your Message >>  
+	
+	""")  
 
-username = raw_input("\nEnter Your Username(Gmail) >> ")
+	username = raw_input("\n[*] Enter Your Username(Gmail) >> ")
 
-password = getpass.getpass("\nEnter Your Password >> ") 
+	password = getpass.getpass("\n[*] Enter Your Password >> ") 
 
-print ("\n\tWait until the mail arrives")
-            
-time.sleep(ti)
+	os.system('clear')
+	
+	print ("\n\n\t[*] OK Now Please Wait Until The Mail Arrives ;)")
+				
+	time.sleep(ti)
 
-server = smtplib.SMTP("smtp.gmail.com:587") 
-server.starttls() 
-server.login( username , password ) 
-server.sendmail(sender, toaddrs, message) 
-server.quit() 
+	server = smtplib.SMTP("smtp.gmail.com:587") 
+	server.starttls() 
+	server.login( username , password ) 
+	server.sendmail(sender, toaddrs, message) 
+	server.quit() 
 
-print "\n\nThe operation was carried out\n\n"
+	print ("\n\n\t\t[*] The Operation Was Carried Out [*] \n\n")
+except KeyboardInterrupt :
+	print ("[!] You Typed Ctrl + X :(")
+
+except smtplib.SMTPConnectError :
+
+	print ('\n\n[!]Connecting Error Please Cheek Your Internet')
